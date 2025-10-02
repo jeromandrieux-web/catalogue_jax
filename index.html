@@ -1,767 +1,838 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title id="pageTitle">Expertise Technique et Analytique</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<style>
-        /* COULEURS JAX */
-        :root {
-            --primary: #0f1c3f; /* Bleu Marine - Fond principal JAX */
-            --secondary: #ff8c00; /* Orange Vif - Accent JAX */
-            --accent: #ffb45a;   /* Orange Clair */
-            --light: #f5f7fa;
-            --dark: #0f1c3f;
-            --text-color: #333;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title id="pageTitle">Expertise Technique et Analytique</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+  <style>
+    /* COULEURS JAX */
+    :root {
+      --primary: #0f1c3f; /* Bleu Marine - Fond principal JAX */
+      --secondary: #ff8c00; /* Orange Vif - Accent JAX */
+      --accent: #ffb45a;   /* Orange Clair */
+      --light: #f5f7fa;
+      --dark: #0f1c3f;
+      --text-color: #333;
+    }
 
-        body {
-            background-color: var(--light);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    body {
+      background-color: var(--light);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
 
-        /* En-tête JAX Style */
-        header {
-            background-color: var(--dark);
-            color: white;
-            padding: 15px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    /* En-tête JAX Style */
+    header {
+      background-color: var(--dark);
+      color: white;
+      padding: 15px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-        .jax-title-box {
-            display: flex;
-            align-items: center;
-        }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .jax-title-box h1 {
-            font-size: 1.5em;
-            font-weight: 600;
-        }
+    .jax-title-box {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-        /* Groupes de Boutons (Langues & Types) */
-        .toggle-group {
-            display: flex;
-            border-radius: 5px;
-            overflow: hidden;
-            margin-left: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
+    .jax-title-box h1 {
+      font-size: 1.5em;
+      font-weight: 600;
+    }
 
-        .toggle-group button {
-            background-color: var(--dark);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            transition: background-color 0.2s, color 0.2s;
-            font-size: 1em;
-            font-weight: 500;
-        }
+    /* Groupes de Boutons (Langues & Types) */
+    .toggle-group {
+      display: flex;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-left: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
 
-        .toggle-group button:hover {
-            background-color: #1e3a6c;
-        }
+    .toggle-group button {
+      background-color: var(--dark);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s;
+      font-size: 1em;
+      font-weight: 500;
+    }
 
-        .toggle-group button.active-toggle {
-            background-color: var(--secondary);
-            color: var(--dark);
-            font-weight: 700;
-        }
+    .toggle-group button:hover {
+      background-color: #1e3a6c;
+    }
 
-        /* Cartouche de description */
-        .app-description-cartridge {
-            padding: 20px 0;
-        }
+    .toggle-group button.active-toggle {
+      background-color: var(--secondary);
+      color: var(--dark);
+      font-weight: 700;
+    }
 
-        .app-description-cartridge p {
-            text-align: center; 
-            margin: 20px 0; 
-            font-size: 1.1em; 
-            color: var(--primary); 
-            font-weight: 500; 
-            padding: 20px; 
-            background-color: white; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    /* Cartouche de description */
+    .app-description-cartridge {
+      padding: 20px 0;
+    }
 
-        /* Catalogue */
-        .catalogs-section {
-            padding: 20px 0;
-        }
+    .app-description-cartridge p {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 1.1em;
+      color: var(--primary);
+      font-weight: 500;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-        .catalog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
+    /* Catalogue */
+    .catalogs-section {
+      padding: 20px 0;
+    }
 
-        .course-card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-            border-left: 5px solid var(--secondary);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        
-        /* CORRECTION : Mise en page de la section Suivi (Vidéo + Carte) */
-        .suivi-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* 2 colonnes égales sur grand écran */
-            gap: 20px;
-            margin-top: 30px;
-            align-items: stretch; /* S'assurer que les éléments s'étirent */
-        }
-        
-        .suivi-layout .course-card {
-            cursor: default; /* Désactiver le curseur pointer */
-            transition: none;
-            transform: none;
-        }
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
 
-        .suivi-layout .course-card.video-card {
-            border-left: none; 
-            padding: 0;
-            box-shadow: none;
-            overflow: hidden; /* Important pour les bords de la vidéo */
-            background-color: transparent;
-        }
-        
-        .suivi-layout .course-card.video-card video {
-            display: block;
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        /* FIN CORRECTION SUIVI */
+    .course-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      border-left: 5px solid var(--secondary);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
 
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Les autres styles... (course-card h3, p, i, tag, cta-link) sont corrects */
-        .course-card h3 { color: var(--primary); margin-top: 10px; font-size: 1.2em; }
-        .course-card p { margin: 10px 0 15px; color: #555; font-size: 0.9em; flex-grow: 1; }
-        .course-card i { color: var(--secondary); font-size: 1.8em; }
-        .course-card .tag { background-color: var(--accent); color: var(--dark); padding: 4px 10px; border-radius: 4px; font-size: 0.8em; font-weight: 600; display: inline-block; margin-bottom: 10px; }
-        .cta-link { text-align: right; margin-top: 10px; }
-        .cta-link a { color: var(--secondary); text-decoration: none; font-weight: bold; transition: color 0.2s; }
-        .cta-link a:hover { color: var(--dark); }
+    .course-card h3 { color: var(--primary); margin-top: 10px; font-size: 1.2em; }
+    .course-card p { margin: 10px 0 15px; color: #555; font-size: 0.9em; flex-grow: 1; }
+    .course-card i { color: var(--secondary); font-size: 1.8em; }
+    .course-card .tag { background-color: var(--accent); color: var(--dark); padding: 4px 10px; border-radius: 4px; font-size: 0.8em; font-weight: 600; display: inline-block; margin-bottom: 10px; }
+    .cta-link { text-align: right; margin-top: 10px; }
+    .cta-link a { color: var(--secondary); text-decoration: none; font-weight: bold; transition: color 0.2s; }
+    .cta-link a:hover { color: var(--dark); }
 
+    /* MISE EN PAGE SUIVI (Vidéo + Carte) */
+    .suivi-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* 2 colonnes */
+      gap: 20px;
+      margin-top: 30px;
+      align-items: stretch;
+    }
+    .suivi-layout .course-card {
+      cursor: default;
+      transition: none;
+      transform: none;
+    }
+    .suivi-layout .course-card.video-card {
+      border-left: none;
+      padding: 0;
+      box-shadow: none;
+      overflow: hidden;
+      background-color: transparent;
+    }
+    .suivi-layout .course-card.video-card video {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        /* Styles Modale (Non modifiés) */
-        .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); }
-        .modal-content { background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 600px; border-radius: 8px; position: relative; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
-        .close-button { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
-        .close-button:hover, .close-button:focus { color: #000; text-decoration: none; }
-
-
-        /* RESPONSIVE DESIGN pour Mobile */
-        @media (max-width: 768px) {
-            .container { padding: 10px; }
-            .catalog-grid { grid-template-columns: 1fr; gap: 15px; }
-
-            /* Sur mobile, la section Suivi repasse en 1 colonne pour empiler la vidéo et la carte */
-            .suivi-layout {
-                grid-template-columns: 1fr; 
-                gap: 15px;
-            }
-            .suivi-layout .course-card.video-card {
-                /* S'assurer que la carte vidéo conserve un peu de marges sur mobile */
-                padding: 10px 0; 
-            }
-            
-            header .container { flex-direction: column; align-items: center; text-align: center; }
-            .jax-title-box { flex-direction: column; margin-bottom: 15px; }
-            .jax-title-box h1 { font-size: 1.3em; margin-top: 10px; }
-            .toggle-group { width: 100%; margin-left: 0; justify-content: center; padding: 5px 0; }
-            .toggle-group button { padding: 8px 10px; font-size: 0.9em; }
-            .modal-content { margin: 5% auto; width: 95%; }
-        }
-    </style>
+    /* RESPONSIVE DESIGN pour Mobile */
+    @media (max-width: 768px) {
+      .container { padding: 10px; }
+      .catalog-grid { grid-template-columns: 1fr; gap: 15px; }
+      .suivi-layout { grid-template-columns: 1fr; gap: 15px; }
+      .suivi-layout .course-card.video-card { padding: 10px 0; }
+      header .container { flex-direction: column; align-items: center; text-align: center; }
+      .jax-title-box { flex-direction: column; margin-bottom: 15px; }
+      .jax-title-box h1 { font-size: 1.3em; margin-top: 10px; }
+      .toggle-group { width: 100%; margin-left: 0; justify-content: center; padding: 5px 0; box-shadow: none; }
+      .toggle-group button { padding: 8px 10px; font-size: 0.9em; }
+    }
+  </style>
 </head>
+
 <body onload="showCatalog('mercure', 'fr')">
-<header>
-<div class="container">
-<div class="jax-title-box">
-<img alt="JAX Logo" id="logo-image" src="./assets/image/logo_jax.png" style="height: 40px; margin-right: 15px;">
-<h1 id="mainTitle">Expertise Technique et Analytique</h1>
-</div>
-<div style="display: flex;">
-<div class="toggle-group">
-<button id="lang-fr" onclick="changeLanguage('fr')">FR</button>
-<button id="lang-en" onclick="changeLanguage('en')">EN</button>
-</div>
-<button onclick="document.getElementById('bioJaxModal').style.display='block'" style="margin-left:15px;background:var(--secondary);color:var(--dark);border:none;border-radius:6px;padding:8px 12px;font-weight:700;cursor:pointer;">À propos de Jérôme Andrieux</button></div>
-</div>
-</header>
-<div class="container app-description-cartridge">
-<p id="appDescriptionText">
-            Bienvenue dans le catalogue d'expertise technique et analytique JAX. Découvrez nos parcours de formation Mercure pour la gestion des données, nos modules d'analyse avancée et notre outil exclusif de suivi de la progression individuelle des agents.
-        </p>
-</div>
-<div class="container catalogs-section">
-<div class="toggle-group" style="margin: 0 auto 30px; width: fit-content; box-shadow: none;">
-<button class="active-toggle" id="type-mercure" onclick="showCatalog('mercure')">Mercure</button>
-<button id="type-analyse" onclick="showCatalog('analyse')">Analyse</button>
-<button id="type-suivi" onclick="showCatalog('suivi')">Suivi de formation</button>
-</div>
-<h2 id="catalogTitle" style="text-align: center; color: var(--primary);">Catalogue Mercure</h2>
-<div id="all-catalogs">
-<div class="catalog-grid" id="catalog-mercure-fr">
-<div class="course-card">
-<i class="fas fa-microchip course-icon"></i>
-<div class="course-level">Niveau 1 (Technique)</div>
-<div class="course-duration">Durée : 24 heures (4 jours)</div>
-<h2 class="course-title">Mercure V5 : Primo Utilisateur</h2>
-<p class="course-focus">Maîtriser l'environnement du logiciel, l'ingestion de données de base et les fonctions de recherche simples.</p>
-<div class="course-modules">
-<h4>Objectifs Principaux :</h4>
-<ul>
-<li><i class="fas fa-check-circle"></i> Organisation de l'espace de travail.</li>
-<li><i class="fas fa-check-circle"></i> Identification des données et création d'entités.</li>
-<li><i class="fas fa-check-circle"></i> Recherche par valeur unique sur le Référentiel.</li>
-</ul>
-</div>
-<details class="syllabus-details">
-<summary>Consulter le Programme Détaillé</summary>
-<div class="syllabus-content">
-<h5>I. Introduction à Mercure (Contexte)</h5>
-<ul><li>Rôle et Objectifs, Sources de données exploitables : Téléphonie, LAPI, Financier, IP.</li></ul>
-<h5>II. Fenêtre Principale et Navigation dans l'interface</h5>
-<ul><li>Menus Principaux, la zone centrale : l'espace de travail, la procédure, le dossier, la réquisition, Barre d'État, Recherche de Texte.</li></ul>
-<h5>III. Gestion et Préférences</h5>
-<ul><li>Menu Fichier, Préférences Générales et Affichage (Formats), Configuration Import/Export.</li></ul>
-<h5>IV. Ingestion et Recherche de Base (par Valeur)</h5>
-<ul><li>Recherche par Valeur (Numéro, IMEI, IMSI, Immatriculations).</li></ul>
-</div>
-</details>
-</div>
-<div class="course-card">
-<i class="fas fa-database course-icon"></i>
-<div class="course-level">Niveau 2 (Technique)</div>
-<div class="course-duration">Durée : 12 heures (2 jours)</div>
-<h2 class="course-title">Mercure V5 : Avancé</h2>
-<p class="course-focus">Débloquer les fonctions d'analyse complexes, les requêtes multi-entités et la corrélation de données avancée.</p>
-<div class="course-modules">
-<h4>Objectifs Principaux :</h4>
-<ul>
-<li><i class="fas fa-check-circle"></i> Maîtrise des recherches par Listes et Multi-Entités (Plage Calendaire, Texte).</li>
-<li><i class="fas fa-check-circle"></i> Utilisation des fonctions d'analyse (Graphes, Cartographie, Corrélation).</li>
-</ul>
-</div>
-<details class="syllabus-details">
-<summary>Consulter le Programme Détaillé</summary>
-<div class="syllabus-content">
-<h5>I. Recherches Avancées par Listes et Entités</h5>
-<ul><li>Recherche par Listes de Sélection (Téléphonie, Financier), Recherche Texte intégral et Plage Calendaire.</li></ul>
-<h5>II. Organisation Avancée et Requêtes</h5>
-<ul><li>Gestion des hiérarchies (Catégories, Procédures), Requêtes Favorites.</li></ul>
-<h5>III. Fonctions d'Analyse (Hors-Menu)</h5>
-<ul><li>Visualisations (Graphes, Timeline), Corrélation, Requêtes Métier (Proximité, Rencontre/Éloignement).</li></ul>
-</div>
-</details>
-</div>
-<div class="course-card">
-<i class="fas fa-server course-icon"></i>
-<div class="course-level">Niveau 3 (Technique)</div>
-<div class="course-duration">Durée : 8 heures (1,5 jours)</div>
-<h2 class="course-title">Mercure V5 : Expert</h2>
-<p class="course-focus">Maîtriser les aspects d'administration du serveur, de gestion des référentiels et la production des exports judiciaires normalisés.</p>
-<div class="course-modules">
-<h4>Objectifs Principaux :</h4>
-<ul>
-<li><i class="fas fa-check-circle"></i> Gestion du Référentiel Relais et Import de TAC IMEI.</li>
-<li><i class="fas fa-check-circle"></i> Administration Utilisateur et Sécurité.</li>
-<li><i class="fas fa-check-circle"></i> Production de Rapports et Exports pour l'Autorité Judiciaire.</li>
-</ul>
-</div>
-<details class="syllabus-details">
-<summary>Consulter le Programme Détaillé</summary>
-<div class="syllabus-content">
-<h5>I. Administration et Sécurité (Menu Fichier)</h5>
-<ul><li>Habilitations, Utilisateurs (Serveur), Mise à jour des formats d'import, Restauration d'archive.</li></ul>
-<h5>II. Gestion des Référentiels</h5>
-<ul><li>Import de la Base des TAC IMEI, Gestion des Relais, Import de Géolocalisations.</li></ul>
-<h5>III. Configuration Avancée (Préférences)</h5>
-<ul><li>Cartographie (Serveurs de Tuile, Géocodage), Connexions Réseaux (Proxy), Nomenclature MCC/MNC.</li></ul>
-<h5>IV. Restitution et Exports</h5>
-<ul><li>Exports Judiciaires (ANX, KML, Shapefile), Formats de Rapport (PDF, DOCX).</li></ul>
-</div>
-</details>
-</div>
-</div>
-<div class="catalog-grid" id="catalog-mercure-en" style="display: none;">
-<div class="course-card">
-<i class="fas fa-microchip course-icon"></i>
-<div class="course-level">Level 1 (Technical)</div>
-<div class="course-duration">Duration: 21 hours (3 days)</div>
-<h2 class="course-title">Mercure V5: First User</h2>
-<p class="course-focus">Master the software environment, basic data ingestion and simple search functions.</p>
-<div class="course-modules">
-<h4>Main Goals:</h4>
-<ul>
-<li><i class="fas fa-check-circle"></i> Workspace organization.</li>
-<li><i class="fas fa-check-circle"></i> Entity identification and manual creation.</li>
-<li><i class="fas fa-check-circle"></i> Single-value searches on the Registry.</li>
-</ul>
-</div>
-<details class="syllabus-details">
-<summary>Detailed Program</summary>
-<div class="syllabus-content">
-<h5>I. Introduction to Mercure (Context)</h5>
-<ul><li>Role and Objectives, Available data sources: Telephony, LAPI, Financial, IP.</li></ul>
-<h5>II. Main Window and Navigation</h5>
-<ul><li>Main Menus, Central Workspace Area, Status Bar, Text Search.</li></ul>
-<h5>III. Management and Preferences</h5>
-<ul><li>File Menu, General and Display Preferences (Formats), Import/Export Configuration.</li></ul>
-<h5>IV. Basic Ingestion and Search (by Value)</h5>
-<ul><li>Value Search on Entities (Number, IMEI, IMSI, License Plates).</li></ul>
-</div>
-</details>
-</div>
-<div class="course-card">
-<i class="fas fa-database course-icon"></i>
-<div class="course-level">Level 2 (Technical)</div>
-<div class="course-duration">Duration: 21 hours (3 days)</div>
-<h2 class="course-title">Mercure V5: Advanced</h2>
-<p class="course-focus">Unlock complex analysis functions, multi-entity queries and advanced data correlation.</p>
-<div class="course-modules">
-<h4>Main Goals:</h4>
-<ul>
-<li><i class="fas fa-check-circle"></i> Master List and Multi-Entity searches (Calendar Range, Text).</li>
-<li><i class="fas fa-check-circle"></i> Use of analysis functions (Graphs, Mapping, Correlation).</li>
-</ul>
-</div>
-<details class="syllabus-details">
-<summary>Detailed Program</summary>
-<div class="syllabus-content">
-<h5>I. Advanced List and Entity Searches</h5>
-<ul><li>Selection List Search (Telephony, Financial), Full Text Search and Calendar Range.</li></ul>
-<h5>II. Advanced Organization and Queries</h5>
-<ul><li>Hierarchy Management (Categories, Procedures), Favorite Queries.</li></ul>
-<h5>III. Analysis Functions (Out-of-Menu)</h5>
-<ul><li>Visualizations (Graphs, Timeline), Correlation, Business Queries (Proximity, Meeting/Distance).</li></ul>
-</div>
-</details>
-</div>
-<div class="course-card">
-<i class="fas fa-server course-icon"></i>
-<div class="course-level">Level 3 (Technical)</div>
-<div class="course-duration">Duration: 21 hours (3 days)</div>
-<h2 class="course-title">Mercure V5: Expert</h2>
-<p class="course-focus">Master server administration aspects, registry management and production of standardized judicial exports.</p>
-<div class="course-modules">
-<h4>Main Goals:</h4>
-<ul>
-<li><i class="fas fa-check-circle"></i> Relay Registry Management and TAC IMEI Import.</li>
-<li><i class="fas fa-check-circle"></i> User Administration and Security.</li>
-<li><i class="fas fa-check-circle"></i> Report Production and Exports for Judicial Authorities.</li>
-</ul>
-</div>
-<details class="syllabus-details">
-<summary>Detailed Program</summary>
-<div class="syllabus-content">
-<h5>I. Administration and Security (File Menu)</h5>
-<ul><li>Authorizations, Users (Server), Import Format Updates, Archive Restoration.</li></ul>
-<h5>II. Registry Management</h5>
-<ul><li>Import of TAC IMEI Database, Relay Management, Geolocation Import.</li></ul>
-<h5>III. Advanced Configuration (Preferences)</h5>
-<ul><li>Mapping (Tile Servers, Geocoding), Network Connections (Proxy), MCC/MNC Nomenclature.</li></ul>
-<h5>IV. Restitution and Exports</h5>
-<ul><li>Judicial Exports (ANX, KML, Shapefile), Report Formats (PDF, DOCX).</li></ul>
-</div>
-</details>
-</div>
-</div>
-<div class="catalog-grid" id="catalog-analyse-fr" style="display: none;">
-<div class="course-card">
-<i class="fas fa-gavel course-icon"></i>
-<div class="course-level">Niveau 1 (Méthodologique)</div>
-<div class="course-duration">Durée : 18 heures (3 jours)</div>
-<h2 class="course-title">Analyse Judiciaire : Les Fondamentaux</h2>
-<p class="course-focus">Passer de la donnée brute à l'analyse opérationnel. Structurer le cas, différencier les sources de données et établir un profil d'utilisateur.</p>
-<div class="course-modules">
-<h4>Modules Couverts :</h4>
-<ul>
-<li><i class="fas fa-dot-circle"></i> **Structuration des données** : Questions d'enquête, rédiger l'analyse.</li>
-<li><i class="fas fa-dot-circle"></i> **L'Individu et ses Alias** : Identification par Numéro, IMEI, IMSI, LAPI.</li>
-<li><i class="fas fa-dot-circle"></i> **Premières Corrélations** : Localisation spatio-temporelle basique.</li>
-</ul>
-</div>
-<details class="syllabus-details">
-<summary>Programme Détaillé</summary>
-<div class="syllabus-content">
-<h5>Méthodologie d'Enquête</h5>
-<ul><li>Définition des objectifs et de la portée de l'analyse.</li><li>Matrice des Sources : Bornage, FADette, Extractions, IP (leur utilité et leurs limites).</li></ul>
-<h5>Application avec Mercure V5</h5>
-<ul><li>Mise en œuvre du stage **Primo Utilisateur** dans un contexte d'enquête.</li><li>Utilisation des fonctions de **Recherche par Valeur** pour vérifier des hypothèses.</li></ul>
-</div>
-</details>
-</div>
-<div class="course-card">
-<i class="fas fa-diagram-project course-icon"></i>
-<div class="course-level">Niveau 2 (Méthodologique)</div>
-<div class="course-duration">Durée : 6 heures (1 jour)</div>
-<h2 class="course-title">Analyse Judiciaire : Modélisation des Réseaux</h2>
-<p class="course-focus">Détecter les liens cachés (indirects ou par substitution), reconstituer les parcours opérationnels, et identifier des schémas anormaux (patterns).</p>
-<div class="course-modules">
-<h4>Modules Couverts :</h4>
-<ul>
-<li><i class="fas fa-dot-circle"></i> **Analyse des Liens** : Modélisation des rôles, Liens non évidents (Tiers).</li>
-<li><i class="fas fa-dot-circle"></i> **Analyse Spatio-Temporelle** : Points de contact clés, Reconstitution de mouvement.</li>
-<li><i class="fas fa-dot-circle"></i> **Patterns d'Activité** : Fréquence, Flotte LAPI, Communication groupée.</li>
-</ul>
-</div>
-<details class="syllabus-details">
-<summary>Programme Détaillé</summary>
-<div class="syllabus-content">
-<h5>Méthodologie d'Analyse</h5>
-<ul><li>Techniques de "Link Analysis" : identification des ponts et des isolés dans un réseau.</li><li>Application du raisonnement inductif et déductif aux données géolocalisées.</li></ul>
-<h5>Application avec Mercure V5</h5>
-<ul><li>Maîtrise de la **Cartographie Avancée** et de la **Timeline** pour le parcours.</li><li>Exploitation des **Graphes de Corrélation** et des **Requêtes de Liste** pour les patterns.</li></ul>
-</div>
-</details>
-</div>
-<div class="course-card">
-<i class="fas fa-balance-scale course-icon"></i>
-<div class="course-level">Niveau 3 (Méthodologique)</div>
-<div class="course-duration">Durée : 18 heures (3 jours)</div>
-<h2 class="course-title">Analyse Judiciaire : Expertise et Restitution</h2>
-<p class="course-focus">Synthèse analytique, gestion des référentiels pour l'intégrité, et production d'une expertise judiciaire narrative et démontrable.</p>
-<div class="course-modules">
-<h4>Modules Couverts :</h4>
-<ul>
-<li><i class="fas fa-dot-circle"></i> **Synthèse du Dossier** : Résumé analytique, Évaluation des preuves (probatoire/non-probatoire).</li>
-<li><i class="fas fa-dot-circle"></i> **Intégration et Validation** : Gestion du Référentiel Relais/Adresses.</li>
-<li><i class="fas fa-dot-circle"></i> **La Narration Analytique** : Rapport, le procès-verbal, Préparation des supports et des résumés pour l'audience.</li>
-</ul>
-</div>
-<details class="syllabus-details">
-<summary>Programme Détaillé</summary>
-<div class="syllabus-content">
-<h5>Qualité de l'Expertise</h5>
-<ul><li>Principes de la preuve numérique : intégrité et traçabilité.</li><li>Validation des données par la gestion des référentiels (Relais, Adresses, etc.).</li></ul>
-<h5>Restitution pour l'Autorité Judiciaire et un jury</h5>
-<ul><li>Techniques de rédaction pour le rapport de synthèse et les procés§verbaux.</li><li>Production d'Exports Judiciaires (ANX, KML) pour la présentation d'une preuve structurée.</li></ul>
-</div>
-</details>
-</div>
-</div>
-<div class="catalog-grid" id="catalog-analyse-en" style="display: none;">
-<div class="course-card">
-<i class="fas fa-gavel course-icon"></i>
-<div class="course-level">Level 1 (Methodological)</div>
-<div class="course-duration">Duration: 21 hours (3 days)</div>
-<h2 class="course-title">Judicial Analysis: Fundamentals</h2>
-<p class="course-focus">From raw data to evidence. Structure the case, differentiate data sources and build an initial digital profile.</p>
-<div class="course-modules">
-<h4>Covered Modules:</h4>
-<ul>
-<li><i class="fas fa-dot-circle"></i> **Case Structuring**: Investigation questions, probative value of sources.</li>
-<li><i class="fas fa-dot-circle"></i> **Individual and Aliases**: Identification by Number, IMEI, IMSI, LAPI.</li>
-<li><i class="fas fa-dot-circle"></i> **First Correlations**: Basic spatio-temporal localization.</li>
-</ul>
-</div>
-<details class="syllabus-details">
-<summary>Detailed Program</summary>
-<div class="syllabus-content">
-<h5>Investigation Methodology</h5>
-<ul><li>Definition of objectives and scope of analysis.</li><li>Source Matrix: Bounding, FADette, Extractions, IP (their utility and limitations).</li></ul>
-<h5>Application with Mercure V5</h5>
-<ul><li>Implementation of the **First User** training in an investigation context.</li><li>Use of **Value Search** functions to verify hypotheses.</li></ul>
-</div>
-</details>
-</div>
-<div class="course-card">
-<i class="fas fa-diagram-project course-icon"></i>
-<div class="course-level">Level 2 (Methodological)</div>
-<div class="course-duration">Duration: 21 hours (3 days)</div>
-<h2 class="course-title">Judicial Analysis: Network Modeling</h2>
-<p class="course-focus">Detect hidden links (indirect or by substitution), reconstruct operational paths, and identify abnormal patterns.</p>
-<div class="course-modules">
-<h4>Covered Modules:</h4>
-<ul>
-<li><i class="fas fa-dot-circle"></i> **Link Analysis**: Role modeling, Non-obvious links (Third Parties).</li>
-<li><i class="fas fa-dot-circle"></i> **Spatio-Temporal Analysis**: Key contact points, Movement reconstruction.</li>
-<li><i class="fas fa-dot-circle"></i> **Activity Patterns**: Frequency, LAPI fleet, Grouped communication.</li>
-</ul>
-</div>
-<details class="syllabus-details">
-<summary>Detailed Program</summary>
-<div class="syllabus-content">
-<h5>Analysis Methodology</h5>
-<ul><li>"Link Analysis" techniques: identification of bridges and isolates in a network.</li><li>Application of inductive and deductive reasoning to geolocated data.</li></ul>
-<h5>Application with Mercure V5</h5>
-<ul><li>Mastery of **Advanced Mapping** and **Timeline** for paths.</li><li>Exploitation of **Correlation Graphs** and **List Queries** for patterns.</li></ul>
-</div>
-</details>
-</div>
-<div class="course-card">
-<i class="fas fa-balance-scale course-icon"></i>
-<div class="course-level">Level 3 (Methodological)</div>
-<div class="course-duration">Duration: 21 hours (3 days)</div>
-<h2 class="course-title">Judicial Analysis: Expertise and Restitution</h2>
-<p class="course-focus">Analytical synthesis, registry management for integrity, and production of a narrative and demonstrable judicial expertise.</p>
-<div class="course-modules">
-<h4>Covered Modules:</h4>
-<ul>
-<li><i class="fas fa-dot-circle"></i> **Case Synthesis**: Analytical summary, Evidence evaluation (probative/non-probative).</li>
-<li><i class="fas fa-dot-circle"></i> **Integration and Validation**: Relay/Address Registry management.</li>
-<li><i class="fas fa-dot-circle"></i> **Analytical Narration**: Narrative report, Preparation of visual supports for hearings.</li>
-</ul>
-</div>
-<details class="syllabus-details">
-<summary>Detailed Program</summary>
-<div class="syllabus-content">
-<h5>Expertise Quality</h5>
-<ul><li>Principles of digital evidence: integrity and traceability.</li><li>Data validation through registry management (Relays, Addresses, etc.).</li></ul>
-<h5>Restitution for Judicial Authorities</h5>
-<ul><li>*Storytelling* techniques (factual narration) for the report.</li><li>Production of Judicial Exports (ANX, KML) for the presentation of structured evidence.</li></ul>
-</div>
-</details>
-</div>
-</div>
-<div class="suivi-layout" id="catalog-suivi-fr" style="display: none;">
-<div class="course-card">
-<i class="fas fa-chart-line course-icon"></i>
-<div class="course-level">Application</div>
-<div class="course-duration">Statut : Démo locale</div>
-<h2 class="course-title">Suivi des Formations</h2>
-<p class="course-focus">Plateforme de progression et d'analytics pour Mercure V5.</p>
-<div class="course-modules">
-<h4>Fonctionnalités principales :</h4>
-<ul>
-<li><i class="fas fa-check-circle"></i> Authentification : création de compte, connexion, profil</li>
-<li><i class="fas fa-check-circle"></i> Tableau de bord : statistiques et graphiques d'évolution</li>
-<li><i class="fas fa-check-circle"></i> Formation : modules, QCM (20 questions), suivi des scores</li>
-<li><i class="fas fa-check-circle"></i> Opérations : suivi d'enquêtes, données traitées, Retex</li>
-<li><i class="fas fa-check-circle"></i> Analytics : corrélation formation/performance, tendances</li>
-<li><i class="fas fa-database"></i> Stockage : localStorage (comptes, résultats, historique, Retex)</li>
-<li><i class="fas fa-tools"></i> Tech : HTML5, CSS3, JS ES6+, Chart.js, Font Awesome</li>
-</ul>
-</div>
-<details class="syllabus-details">
-<summary>Voir la présentation &amp; média</summary>
-<div class="syllabus-content">
-<h5>Présentation</h5>
-<p>Plateforme complète de formation et de suivi opérationnel pour le logiciel Mercure V5, dédiée aux investigations judiciaires.</p>
-<h5>Média</h5>
-<p>Voici votre capture vidéo intégrée. Pour une compatibilité maximale, pensez à fournir aussi une version MP4.</p>
-<video controls="True" playsinline="True" preload="metadata" style="width:100%;height:auto;border-radius:8px">
+  <header>
+    <div class="container">
+      <div class="jax-title-box">
+        <!-- LOGO (chemin relatif correct) -->
+        <img alt="JAX Logo" id="logo-image" src="./assets/image/logo_jax.png" style="height:40px; margin-right:15px;">
+        <h1 id="mainTitle">Expertise Technique et Analytique</h1>
+      </div>
 
-                                Votre navigateur ne supporte pas la lecture de ce fichier .mov.
-                            <source src="assets/video/animation-app-formation.mp4" type="video/mp4"/></video>
-</div>
-</details>
-</div>
-</div>
-<div class="suivi-layout" id="catalog-suivi-en" style="display: none;">
-<div class="course-card video-card">
-<video autoplay="" height="auto" loop="" muted="" playsinline="" preload="metadata" width="100%">
-<source src="assets/video/animation-app-formation.mp4" type="video/mp4"/>
-<source src="assets/video/animation-app-formation.webm" type="video/webm"/>
-                        Your browser does not support the video tag.
-                    </video>
-</div>
-<div class="course-card">
-<div>
-<i class="fa-solid fa-graduation-cap"></i>
-<h3>Individual Training Tracking App</h3>
-<p>This web tool is dedicated to individual agent tracking. It allows viewing progress, earned certifications, and planned next training steps. **Mandatory access for team leads.**</p>
-<span class="tag">Available</span>
-</div>
-<div class="cta-link">
-<a href="URL_VERS_VOTRE_APPLI_DE_SUIVI" target="_blank">Access the App »</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="modal" id="bioModal">
-<div class="modal-content">
-<span class="close-button" onclick="closeBioModal()">×</span>
-<h2 id="modalTitle" style="color: var(--primary);"></h2>
-<p id="modalText"></p>
-<hr style="margin: 20px 0;"/>
-<p style="text-align: right; font-weight: bold;"><a href="URL_GENERALE_INSCRIPTION" id="modalCtaLink" style="color: var(--secondary);" target="_blank">Accéder à la formation »</a></p>
-</div>
-</div>
-<script>
-        let currentLang = 'fr';
-        let currentType = 'mercure';
+      <div style="display:flex; align-items:center;">
+        <div class="toggle-group">
+          <button id="lang-fr" onclick="changeLanguage('fr')">FR</button>
+          <button id="lang-en" onclick="changeLanguage('en')">EN</button>
+        </div>
+        <button onclick="document.getElementById('bioJaxModal').style.display='block'" style="margin-left:15px;background:var(--secondary);color:var(--dark);border:none;border-radius:6px;padding:8px 12px;font-weight:700;cursor:pointer;">
+          À propos de Jérôme Andrieux
+        </button>
+      </div>
+    </div>
+  </header>
 
-        function openBioModal(title, text, link = 'URL_GENERALE_INSCRIPTION') { 
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalText').innerText = text;
-            document.getElementById('modalCtaLink').href = link; 
-            document.getElementById('bioModal').style.display = 'block';
+  <div class="container app-description-cartridge">
+    <p id="appDescriptionText">
+      Bienvenue dans le catalogue d'expertise technique et analytique JAX. Découvrez nos parcours de formation Mercure pour la gestion des données, nos modules d'analyse avancée et notre outil exclusif de suivi de la progression individuelle des agents.
+    </p>
+  </div>
+
+  <div class="container catalogs-section">
+    <div class="toggle-group" style="margin: 0 auto 30px; width: fit-content; box-shadow: none;">
+      <button id="type-mercure" class="active-toggle" onclick="showCatalog('mercure')">Mercure</button>
+      <button id="type-analyse" onclick="showCatalog('analyse')">Analyse</button>
+      <button id="type-suivi" onclick="showCatalog('suivi')">Suivi de formation</button>
+    </div>
+
+    <h2 id="catalogTitle" style="text-align: center; color: var(--primary);">Catalogue Mercure</h2>
+
+    <!-- TOUS LES CATALOGUES -->
+    <div id="all-catalogs">
+      <!-- MERCURE FR -->
+      <div class="catalog-grid" id="catalog-mercure-fr">
+        <div class="course-card">
+          <i class="fas fa-microchip course-icon"></i>
+          <div class="course-level">Niveau 1 (Technique)</div>
+          <div class="course-duration">Durée : 24 heures (4 jours)</div>
+          <h2 class="course-title">Mercure V5 : Primo Utilisateur</h2>
+          <p class="course-focus">Maîtriser l'environnement du logiciel, l'ingestion de données de base et les fonctions de recherche simples.</p>
+          <div class="course-modules">
+            <h4>Objectifs Principaux :</h4>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Organisation de l'espace de travail.</li>
+              <li><i class="fas fa-check-circle"></i> Identification des données et création d'entités.</li>
+              <li><i class="fas fa-check-circle"></i> Recherche par valeur unique sur le Référentiel.</li>
+            </ul>
+          </div>
+          <details class="syllabus-details">
+            <summary>Consulter le Programme Détaillé</summary>
+            <div class="syllabus-content">
+              <h5>I. Introduction à Mercure (Contexte)</h5>
+              <ul><li>Rôle et Objectifs, Sources de données exploitables : Téléphonie, LAPI, Financier, IP.</li></ul>
+              <h5>II. Fenêtre Principale et Navigation dans l'interface</h5>
+              <ul><li>Menus Principaux, la zone centrale : l'espace de travail, la procédure, le dossier, la réquisition, Barre d'État, Recherche de Texte.</li></ul>
+              <h5>III. Gestion et Préférences</h5>
+              <ul><li>Menu Fichier, Préférences Générales et Affichage (Formats), Configuration Import/Export.</li></ul>
+              <h5>IV. Ingestion et Recherche de Base (par Valeur)</h5>
+              <ul><li>Recherche par Valeur (Numéro, IMEI, IMSI, Immatriculations).</li></ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="course-card">
+          <i class="fas fa-database course-icon"></i>
+          <div class="course-level">Niveau 2 (Technique)</div>
+          <div class="course-duration">Durée : 12 heures (2 jours)</div>
+          <h2 class="course-title">Mercure V5 : Avancé</h2>
+          <p class="course-focus">Débloquer les fonctions d'analyse complexes, les requêtes multi-entités et la corrélation de données avancée.</p>
+          <div class="course-modules">
+            <h4>Objectifs Principaux :</h4>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Maîtrise des recherches par Listes et Multi-Entités (Plage Calendaire, Texte).</li>
+              <li><i class="fas fa-check-circle"></i> Utilisation des fonctions d'analyse (Graphes, Cartographie, Corrélation).</li>
+            </ul>
+          </div>
+          <details class="syllabus-details">
+            <summary>Consulter le Programme Détaillé</summary>
+            <div class="syllabus-content">
+              <h5>I. Recherches Avancées par Listes et Entités</h5>
+              <ul><li>Recherche par Listes de Sélection (Téléphonie, Financier), Recherche Texte intégral et Plage Calendaire.</li></ul>
+              <h5>II. Organisation Avancée et Requêtes</h5>
+              <ul><li>Gestion des hiérarchies (Catégories, Procédures), Requêtes Favorites.</li></ul>
+              <h5>III. Fonctions d'Analyse (Hors-Menu)</h5>
+              <ul><li>Visualisations (Graphes, Timeline), Corrélation, Requêtes Métier (Proximité, Rencontre/Éloignement).</li></ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="course-card">
+          <i class="fas fa-server course-icon"></i>
+          <div class="course-level">Niveau 3 (Technique)</div>
+          <div class="course-duration">Durée : 8 heures (1,5 jours)</div>
+          <h2 class="course-title">Mercure V5 : Expert</h2>
+          <p class="course-focus">Maîtriser les aspects d'administration du serveur, de gestion des référentiels et la production des exports judiciaires normalisés.</p>
+          <div class="course-modules">
+            <h4>Objectifs Principaux :</h4>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Gestion du Référentiel Relais et Import de TAC IMEI.</li>
+              <li><i class="fas fa-check-circle"></i> Administration Utilisateur et Sécurité.</li>
+              <li><i class="fas fa-check-circle"></i> Production de Rapports et Exports pour l'Autorité Judiciaire.</li>
+            </ul>
+          </div>
+          <details class="syllabus-details">
+            <summary>Consulter le Programme Détaillé</summary>
+            <div class="syllabus-content">
+              <h5>I. Administration et Sécurité (Menu Fichier)</h5>
+              <ul><li>Habilitations, Utilisateurs (Serveur), Mise à jour des formats d'import, Restauration d'archive.</li></ul>
+              <h5>II. Gestion des Référentiels</h5>
+              <ul><li>Import de la Base des TAC IMEI, Gestion des Relais, Import de Géolocalisations.</li></ul>
+              <h5>III. Configuration Avancée (Préférences)</h5>
+              <ul><li>Cartographie (Serveurs de Tuile, Géocodage), Connexions Réseaux (Proxy), Nomenclature MCC/MNC.</li></ul>
+              <h5>IV. Restitution et Exports</h5>
+              <ul><li>Exports Judiciaires (ANX, KML, Shapefile), Formats de Rapport (PDF, DOCX).</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <!-- /MERCURE FR -->
+
+      <!-- MERCURE EN -->
+      <div class="catalog-grid" id="catalog-mercure-en" style="display:none;">
+        <div class="course-card">
+          <i class="fas fa-microchip course-icon"></i>
+          <div class="course-level">Level 1 (Technical)</div>
+          <div class="course-duration">Duration: 21 hours (3 days)</div>
+          <h2 class="course-title">Mercure V5: First User</h2>
+          <p class="course-focus">Master the software environment, basic data ingestion and simple search functions.</p>
+          <div class="course-modules">
+            <h4>Main Goals:</h4>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Workspace organization.</li>
+              <li><i class="fas fa-check-circle"></i> Entity identification and manual creation.</li>
+              <li><i class="fas fa-check-circle"></i> Single-value searches on the Registry.</li>
+            </ul>
+          </div>
+          <details class="syllabus-details">
+            <summary>Detailed Program</summary>
+            <div class="syllabus-content">
+              <h5>I. Introduction to Mercure (Context)</h5>
+              <ul><li>Role and Objectives, Available data sources: Telephony, LAPI, Financial, IP.</li></ul>
+              <h5>II. Main Window and Navigation</h5>
+              <ul><li>Main Menus, Central Workspace Area, Status Bar, Text Search.</li></ul>
+              <h5>III. Management and Preferences</h5>
+              <ul><li>File Menu, General and Display Preferences (Formats), Import/Export Configuration.</li></ul>
+              <h5>IV. Basic Ingestion and Search (by Value)</h5>
+              <ul><li>Value Search on Entities (Number, IMEI, IMSI, License Plates).</li></ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="course-card">
+          <i class="fas fa-database course-icon"></i>
+          <div class="course-level">Level 2 (Technical)</div>
+          <div class="course-duration">Duration: 21 hours (3 days)</div>
+          <h2 class="course-title">Mercure V5: Advanced</h2>
+          <p class="course-focus">Unlock complex analysis functions, multi-entity queries and advanced data correlation.</p>
+          <div class="course-modules">
+            <h4>Main Goals:</h4>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Master List and Multi-Entity searches (Calendar Range, Text).</li>
+              <li><i class="fas fa-check-circle"></i> Use of analysis functions (Graphs, Mapping, Correlation).</li>
+            </ul>
+          </div>
+          <details class="syllabus-details">
+            <summary>Detailed Program</summary>
+            <div class="syllabus-content">
+              <h5>I. Advanced List and Entity Searches</h5>
+              <ul><li>Selection List Search (Telephony, Financial), Full Text Search and Calendar Range.</li></ul>
+              <h5>II. Advanced Organization and Queries</h5>
+              <ul><li>Hierarchy Management (Categories, Procedures), Favorite Queries.</li></ul>
+              <h5>III. Analysis Functions (Out-of-Menu)</h5>
+              <ul><li>Visualizations (Graphs, Timeline), Correlation, Business Queries (Proximity, Meeting/Distance).</li></ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="course-card">
+          <i class="fas fa-server course-icon"></i>
+          <div class="course-level">Level 3 (Technical)</div>
+          <div class="course-duration">Duration: 21 hours (3 days)</div>
+          <h2 class="course-title">Mercure V5: Expert</h2>
+          <p class="course-focus">Master server administration aspects, registry management and production of standardized judicial exports.</p>
+          <div class="course-modules">
+            <h4>Main Goals:</h4>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Relay Registry Management and TAC IMEI Import.</li>
+              <li><i class="fas fa-check-circle"></i> User Administration and Security.</li>
+              <li><i class="fas fa-check-circle"></i> Report Production and Exports for Judicial Authorities.</li>
+            </ul>
+          </div>
+          <details class="syllabus-details">
+            <summary>Detailed Program</summary>
+            <div class="syllabus-content">
+              <h5>I. Administration and Security (File Menu)</h5>
+              <ul><li>Authorizations, Users (Server), Import Format Updates, Archive Restoration.</li></ul>
+              <h5>II. Registry Management</h5>
+              <ul><li>Import of TAC IMEI Database, Relay Management, Geolocation Import.</li></ul>
+              <h5>III. Advanced Configuration (Preferences)</h5>
+              <ul><li>Mapping (Tile Servers, Geocoding), Network Connections (Proxy), MCC/MNC Nomenclature.</li></ul>
+              <h5>IV. Restitution and Exports</h5>
+              <ul><li>Judicial Exports (ANX, KML, Shapefile), Report Formats (PDF, DOCX).</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <!-- /MERCURE EN -->
+
+      <!-- ANALYSE FR -->
+      <div class="catalog-grid" id="catalog-analyse-fr" style="display:none;">
+        <div class="course-card">
+          <i class="fas fa-gavel course-icon"></i>
+          <div class="course-level">Niveau 1 (Méthodologique)</div>
+          <div class="course-duration">Durée : 18 heures (3 jours)</div>
+          <h2 class="course-title">Analyse Judiciaire : Les Fondamentaux</h2>
+          <p class="course-focus">Passer de la donnée brute à l'analyse opérationnel. Structurer le cas, différencier les sources de données et établir un profil d'utilisateur.</p>
+          <div class="course-modules">
+            <h4>Modules Couverts :</h4>
+            <ul>
+              <li><i class="fas fa-dot-circle"></i> <strong>Structuration des données</strong> : Questions d'enquête, rédiger l'analyse.</li>
+              <li><i class="fas fa-dot-circle"></i> <strong>L'Individu et ses Alias</strong> : Identification par Numéro, IMEI, IMSI, LAPI.</li>
+              <li><i class="fas fa-dot-circle"></i> <strong>Premières Corrélations</strong> : Localisation spatio-temporelle basique.</li>
+            </ul>
+          </div>
+          <details class="syllabus-details">
+            <summary>Programme Détaillé</summary>
+            <div class="syllabus-content">
+              <h5>Méthodologie d'Enquête</h5>
+              <ul>
+                <li>Définition des objectifs et de la portée de l'analyse.</li>
+                <li>Matrice des Sources : Bornage, FADette, Extractions, IP (leur utilité et leurs limites).</li>
+              </ul>
+              <h5>Application avec Mercure V5</h5>
+              <ul>
+                <li>Mise en œuvre du stage <strong>Primo Utilisateur</strong> dans un contexte d'enquête.</li>
+                <li>Utilisation des fonctions de <strong>Recherche par Valeur</strong> pour vérifier des hypothèses.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="course-card">
+          <i class="fas fa-diagram-project course-icon"></i>
+          <div class="course-level">Niveau 2 (Méthodologique)</div>
+          <div class="course-duration">Durée : 6 heures (1 jour)</div>
+          <h2 class="course-title">Analyse Judiciaire : Modélisation des Réseaux</h2>
+          <p class="course-focus">Détecter les liens cachés (indirects ou par substitution), reconstituer les parcours opérationnels, et identifier des schémas anormaux (patterns).</p>
+          <div class="course-modules">
+            <h4>Modules Couverts :</h4>
+            <ul>
+              <li><i class="fas fa-dot-circle"></i> <strong>Analyse des Liens</strong> : Modélisation des rôles, Liens non évidents (Tiers).</li>
+              <li><i class="fas fa-dot-circle"></i> <strong>Analyse Spatio-Temporelle</strong> : Points de contact clés, Reconstitution de mouvement.</li>
+              <li><i class="fas fa-dot-circle"></i> <strong>Patterns d'Activité</strong> : Fréquence, Flotte LAPI, Communication groupée.</li>
+            </ul>
+          </div>
+          <details class="syllabus-details">
+            <summary>Programme Détaillé</summary>
+            <div class="syllabus-content">
+              <h5>Méthodologie d'Analyse</h5>
+              <ul>
+                <li>Techniques de "Link Analysis" : identification des ponts et des isolés dans un réseau.</li>
+                <li>Application du raisonnement inductif et déductif aux données géolocalisées.</li>
+              </ul>
+              <h5>Application avec Mercure V5</h5>
+              <ul>
+                <li>Maîtrise de la <strong>Cartographie Avancée</strong> et de la <strong>Timeline</strong> pour le parcours.</li>
+                <li>Exploitation des <strong>Graphes de Corrélation</strong> et des <strong>Requêtes de Liste</strong> pour les patterns.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="course-card">
+          <i class="fas fa-balance-scale course-icon"></i>
+          <div class="course-level">Niveau 3 (Méthodologique)</div>
+          <div class="course-duration">Durée : 18 heures (3 jours)</div>
+          <h2 class="course-title">Analyse Judiciaire : Expertise et Restitution</h2>
+          <p class="course-focus">Synthèse analytique, gestion des référentiels pour l'intégrité, et production d'une expertise judiciaire narrative et démontrable.</p>
+          <div class="course-modules">
+            <h4>Modules Couverts :</h4>
+            <ul>
+              <li><i class="fas fa-dot-circle"></i> <strong>Synthèse du Dossier</strong> : Résumé analytique, Évaluation des preuves (probatoire/non-probatoire).</li>
+              <li><i class="fas fa-dot-circle"></i> <strong>Intégration et Validation</strong> : Gestion du Référentiel Relais/Adresses.</li>
+              <li><i class="fas fa-dot-circle"></i> <strong>La Narration Analytique</strong> : Rapport, le procès-verbal, Préparation des supports et des résumés pour l'audience.</li>
+            </ul>
+          </div>
+          <details class="syllabus-details">
+            <summary>Programme Détaillé</summary>
+            <div class="syllabus-content">
+              <h5>Qualité de l'Expertise</h5>
+              <ul>
+                <li>Principes de la preuve numérique : intégrité et traçabilité.</li>
+                <li>Validation des données par la gestion des référentiels (Relais, Adresses, etc.).</li>
+              </ul>
+              <h5>Restitution pour l'Autorité Judiciaire et un jury</h5>
+              <ul>
+                <li>Techniques de rédaction pour le rapport de synthèse et les procès-verbaux.</li>
+                <li>Production d'Exports Judiciaires (ANX, KML) pour la présentation d'une preuve structurée.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <!-- /ANALYSE FR -->
+
+      <!-- ANALYSE EN -->
+      <div class="catalog-grid" id="catalog-analyse-en" style="display:none;">
+        <div class="course-card">
+          <i class="fas fa-gavel course-icon"></i>
+          <div class="course-level">Level 1 (Methodological)</div>
+          <div class="course-duration">Duration: 21 hours (3 days)</div>
+          <h2 class="course-title">Judicial Analysis: Fundamentals</h2>
+          <p class="course-focus">From raw data to evidence. Structure the case, differentiate data sources and build an initial digital profile.</p>
+          <div class="course-modules">
+            <h4>Covered Modules:</h4>
+            <ul>
+              <li><i class="fas fa-dot-circle"></i> <strong>Case Structuring</strong>: Investigation questions, probative value of sources.</li>
+              <li><i class="fas fa-dot-circle"></i> <strong>Individual and Aliases</strong>: Identification by Number, IMEI, IMSI, LAPI.</li>
+              <li><i class="fas fa-dot-circle"></i> <strong>First Correlations</strong>: Basic spatio-temporal localization.</li>
+            </ul>
+          </div>
+          <details class="syllabus-details">
+            <summary>Detailed Program</summary>
+            <div class="syllabus-content">
+              <h5>Investigation Methodology</h5>
+              <ul>
+                <li>Definition of objectives and scope of analysis.</li>
+                <li>Source Matrix: Bounding, FADette, Extractions, IP (their utility and limitations).</li>
+              </ul>
+              <h5>Application with Mercure V5</h5>
+              <ul>
+                <li>Implementation of the <strong>First User</strong> training in an investigation context.</li>
+                <li>Use of <strong>Value Search</strong> functions to verify hypotheses.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="course-card">
+          <i class="fas fa-diagram-project course-icon"></i>
+          <div class="course-level">Level 2 (Methodological)</div>
+          <div class="course-duration">Duration: 21 hours (3 days)</div>
+          <h2 class="course-title">Judicial Analysis: Network Modeling</h2>
+          <p class="course-focus">Detect hidden links (indirect or by substitution), reconstruct operational paths, and identify abnormal patterns.</p>
+          <div class="course-modules">
+            <h4>Covered Modules:</h4>
+            <ul>
+              <li><i class="fas fa-dot-circle"></i> <strong>Link Analysis</strong>: Role modeling, Non-obvious links (Third Parties).</li>
+              <li><i class="fas fa-dot-circle"></i> <strong>Spatio-Temporal Analysis</strong>: Key contact points, Movement reconstruction.</li>
+              <li><i class="fas fa-dot-circle"></i> <strong>Activity Patterns</strong>: Frequency, LAPI fleet, Grouped communication.</li>
+            </ul>
+          </div>
+          <details class="syllabus-details">
+            <summary>Detailed Program</summary>
+            <div class="syllabus-content">
+              <h5>Analysis Methodology</h5>
+              <ul>
+                <li>"Link Analysis" techniques: identification of bridges and isolates in a network.</li>
+                <li>Application of inductive and deductive reasoning to geolocated data.</li>
+              </ul>
+              <h5>Application with Mercure V5</h5>
+              <ul>
+                <li>Mastery of <strong>Advanced Mapping</strong> and <strong>Timeline</strong> for paths.</li>
+                <li>Exploitation of <strong>Correlation Graphs</strong> and <strong>List Queries</strong> for patterns.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="course-card">
+          <i class="fas fa-balance-scale course-icon"></i>
+          <div class="course-level">Level 3 (Methodological)</div>
+          <div class="course-duration">Duration: 21 hours (3 days)</div>
+          <h2 class="course-title">Judicial Analysis: Expertise and Restitution</h2>
+          <p class="course-focus">Analytical synthesis, registry management for integrity, and production of a narrative and demonstrable judicial expertise.</p>
+          <div class="course-modules">
+            <h4>Covered Modules:</h4>
+            <ul>
+              <li><i class="fas fa-dot-circle"></i> <strong>Case Synthesis</strong>: Analytical summary, Evidence evaluation (probative/non-probative).</li>
+              <li><i class="fas fa-dot-circle"></i> <strong>Integration and Validation</strong>: Relay/Address Registry management.</li>
+              <li><i class="fas fa-dot-circle"></i> <strong>Analytical Narration</strong>: Narrative report, Preparation of visual supports for hearings.</li>
+            </ul>
+          </div>
+          <details class="syllabus-details">
+            <summary>Detailed Program</summary>
+            <div class="syllabus-content">
+              <h5>Expertise Quality</h5>
+              <ul>
+                <li>Principles of digital evidence: integrity and traceability.</li>
+                <li>Data validation through registry management (Relays, Addresses, etc.).</li>
+              </ul>
+              <h5>Restitution for Judicial Authorities</h5>
+              <ul>
+                <li><em>Storytelling</em> techniques (factual narration) for the report.</li>
+                <li>Production of Judicial Exports (ANX, KML) for the presentation of structured evidence.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+      <!-- /ANALYSE EN -->
+
+      <!-- SUIVI FR (vidéo visible en FR) -->
+      <div class="suivi-layout" id="catalog-suivi-fr" style="display:none;">
+        <!-- Colonne 1 : Vidéo -->
+        <div class="course-card video-card">
+          <video autoplay muted loop playsinline preload="metadata" controls style="width:100%;height:auto;">
+            <source src="./assets/video/animation-app-formation.webm" type="video/webm"/>
+            <source src="./assets/video/animation-app-formation.mp4" type="video/mp4"/>
+            Votre navigateur ne supporte pas la vidéo HTML5.
+          </video>
+        </div>
+
+        <!-- Colonne 2 : Carte descriptive -->
+        <div class="course-card">
+          <i class="fas fa-chart-line course-icon"></i>
+          <div class="course-level">Application</div>
+          <div class="course-duration">Statut : Démo locale</div>
+          <h2 class="course-title">Suivi des Formations</h2>
+          <p class="course-focus">Plateforme de progression et d'analytics pour Mercure V5.</p>
+          <div class="course-modules">
+            <h4>Fonctionnalités principales :</h4>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Authentification : création de compte, connexion, profil</li>
+              <li><i class="fas fa-check-circle"></i> Tableau de bord : statistiques et graphiques d'évolution</li>
+              <li><i class="fas fa-check-circle"></i> Formation : modules, QCM (20 questions), suivi des scores</li>
+              <li><i class="fas fa-check-circle"></i> Opérations : suivi d'enquêtes, données traitées, Retex</li>
+              <li><i class="fas fa-check-circle"></i> Analytics : corrélation formation/performance, tendances</li>
+              <li><i class="fas fa-database"></i> Stockage : localStorage (comptes, résultats, historique, Retex)</li>
+              <li><i class="fas fa-tools"></i> Tech : HTML5, CSS3, JS ES6+, Chart.js, Font Awesome</li>
+            </ul>
+          </div>
+          <details class="syllabus-details">
+            <summary>Voir la présentation</summary>
+            <div class="syllabus-content">
+              <h5>Présentation</h5>
+              <p>Plateforme complète de formation et de suivi opérationnel pour le logiciel Mercure V5, dédiée aux investigations judiciaires.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+      <!-- /SUIVI FR -->
+
+      <!-- SUIVI EN -->
+      <div class="suivi-layout" id="catalog-suivi-en" style="display:none;">
+        <div class="course-card video-card">
+          <video autoplay muted loop playsinline preload="metadata" width="100%" height="auto" controls>
+            <source src="./assets/video/animation-app-formation.webm" type="video/webm"/>
+            <source src="./assets/video/animation-app-formation.mp4" type="video/mp4"/>
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="course-card">
+          <div>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h3>Individual Training Tracking App</h3>
+            <p>This web tool is dedicated to individual agent tracking. It allows viewing progress, earned certifications, and planned next training steps. <strong>Mandatory access for team leads.</strong></p>
+            <span class="tag">Available</span>
+          </div>
+          <div class="cta-link">
+            <a href="URL_VERS_VOTRE_APPLI_DE_SUIVI" target="_blank" rel="noopener">Access the App »</a>
+          </div>
+        </div>
+      </div>
+      <!-- /SUIVI EN -->
+    </div>
+    <!-- /#all-catalogs -->
+  </div>
+  <!-- /.catalogs-section -->
+
+  <!-- MODALE GÉNÉRIQUE -->
+  <div class="modal" id="bioModal" style="display:none;">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeBioModal()">×</span>
+      <h2 id="modalTitle" style="color: var(--primary);"></h2>
+      <p id="modalText"></p>
+      <hr style="margin: 20px 0;"/>
+      <p style="text-align: right; font-weight: bold;">
+        <a id="modalCtaLink" href="URL_GENERALE_INSCRIPTION" style="color: var(--secondary);" target="_blank" rel="noopener">Accéder à la formation »</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- MODALE BIO JAX -->
+  <div class="modal" id="bioJaxModal" style="display:none;">
+    <div class="modal-content">
+      <!-- CORRECTION: fermer la BONNE modale -->
+      <span class="close-button" onclick="document.getElementById('bioJaxModal').style.display='none'">×</span>
+      <h2>Jérôme Andrieux - Enquêteur et Analyste Criminel</h2>
+      <p>Le <strong>Brigadier-Chef Jérôme Andrieux</strong> exerce depuis 1998 au sein de la Police Nationale française en tant qu'<strong>enquêteur judiciaire et analyste criminel</strong>. Grâce à ses affectations successives il est resté au cœur des enquêtes judiciaires, traitant directement d'affaires d'ampleur de délinquance et de criminalité organisée, il a pu bâtir et consolider une expertise rare.</p>
+
+      <h3>Parcours Professionnel</h3>
+      <ul>
+        <li><strong>Septembre 2025 :</strong> DIPJ 13 Brigade Criminelle de Marseille</li>
+        <li><strong>Septembre 2024 :</strong> DZSI Marseille</li>
+        <li><strong>Juin à septembre 2024 :</strong> DRPJ PARIS - Brigade Criminelle de Paris - Enquêteur</li>
+        <li><strong>2023-2024 :</strong> Mise en disponibilité – consultant technique auprès de la Société Sunéris</li>
+        <li><strong>2019-2023 :</strong> Détachement au MEAE – expert technique international Niamey Niger</li>
+        <li><strong>2015-2019 :</strong> DRPJ PARIS - Brigade Criminelle de Paris - Procédurier à la Section antiterroriste</li>
+        <li><strong>2006-2015 :</strong> Direction de la sécurité publique de l'agglomération parisienne – Sûreté départementale de PARIS</li>
+        <li><strong>2002-2006 :</strong> Service d'accueil, de recherche et d'investigation judiciaire du commissariat de Police du 4ème arrondissement</li>
+        <li><strong>1999-2002 :</strong> Commissariat central du XIème arrondissement de Paris - Police secours</li>
+        <li><strong>1999 :</strong> Direction de l'ordre Public et de la circulation - Compagnie de sécurisation</li>
+        <li><strong>1998 :</strong> École Nationale de Police de Fos sur Mer - Élève gardien de la Paix</li>
+      </ul>
+
+      <h3>Compétences</h3>
+      <ul>
+        <li><strong>Analyste criminel opérationnel :</strong> Planifier et orienter l'analyse du renseignement ; Définir les méthodes et les outils de traitement de l'information. Étudier, traiter, sélectionner, hiérarchiser les informations et les données extraites à partir de sources ouvertes ; Produire des hypothèses et des prévisions, des perspectives et des recommandations</li>
+        <li><strong>Enquêteur judiciaire de sécurité intérieure (officier de police judiciaire) :</strong> Identifier les infractions pénales, définir la stratégie et diriger l'enquête. Organiser, encadrer et mener les opérations de l'enquête (interpellations, filatures et surveillances, conduite des auditions des victimes, des témoins, des suspects). Rédiger procès-verbaux et rapport de synthèse de l'enquête</li>
+        <li><strong>Formation et transmission de techniques de travail</strong></li>
+        <li><strong>Officier traitant ROHUM judiciaire</strong></li>
+        <li><strong>Expert technique en investigations numériques (analyses téléphoniques et forensiques), maîtrise des outils et logiciels d'investigation</strong></li>
+        <li><strong>Conseiller technique pour l'élaboration de cahiers des charges des nouveaux outils hardwares :</strong> Recherches juridiques concernant les outils développés et à développer et leur portée. Adaptation aux spécificités locales de ces outils (sociologiques et juridiques)</li>
+      </ul>
+
+      <h3>Formations et Certifications</h3>
+      <ul>
+        <li><strong>2023 :</strong> Licence professionnelle Analyste criminel opérationnel Sécurité Défense Renseignement</li>
+        <li><strong>2022 :</strong> Enquêteur judiciaire de sécurité intérieure</li>
+        <li><strong>2004 :</strong> Officier de police judiciaire</li>
+        <li><strong>1998 :</strong> Baccalauréat professionnel métiers de la sécurité option police</li>
+        <li><strong>1992-1994 :</strong> Niveau DEUG Langue - Université de Clermont Ferrand</li>
+        <li><strong>1991-1992 :</strong> Lycée baccalauréat général</li>
+      </ul>
+
+      <h3>Distinctions</h3>
+      <ul>
+        <li><strong>2022 :</strong> Ordre National du Mérite (chevalier)</li>
+        <li><strong>2017 :</strong> Médaille de la sécurité intérieure (échelon argent)</li>
+        <li><strong>2018 :</strong> Médaille d'honneur de la police nationale (échelon argent)</li>
+      </ul>
+
+      <h3>Langues</h3>
+      <p>Anglais B1, Espagnol B1</p>
+
+      <h3>Coordonnées</h3>
+      <p>Email : jeromandrieux@gmail.com<br/>Téléphone : +33 6 03 56 39 24</p>
+    </div>
+  </div>
+
+  <script>
+    let currentLang = 'fr';
+    let currentType = 'mercure';
+
+    function openBioModal(title, text, link = 'URL_GENERALE_INSCRIPTION') {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalText').innerText = text;
+      document.getElementById('modalCtaLink').href = link;
+      document.getElementById('bioModal').style.display = 'block';
+    }
+
+    function closeBioModal() {
+      document.getElementById('bioModal').style.display = 'none';
+    }
+
+    function changeLanguage(newLang) {
+      currentLang = newLang;
+      document.documentElement.lang = newLang;
+      showCatalog(currentType, currentLang);
+      updateTitles(currentType, newLang);
+    }
+
+    function showCatalog(newType, newLang = currentLang) {
+      currentType = newType;
+      currentLang = newLang;
+
+      updateTitles(newType, newLang);
+
+      const allCatalogs = document.querySelectorAll('#all-catalogs > div');
+      allCatalogs.forEach((catalog) => {
+        const id = catalog.id;
+        const el = document.getElementById(id);
+        if (id === `catalog-${newType}-${newLang}`) {
+          // Les grilles (catalog-grid) et la mise en page suivi (suivi-layout) utilisent display:grid
+          el.style.display = 'grid';
+        } else {
+          el.style.display = 'none';
         }
+      });
 
-        function closeBioModal() {
-            document.getElementById('bioModal').style.display = 'none';
-        }
+      // Activer les boutons de Type
+      ['type-mercure','type-analyse','type-suivi'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('active-toggle');
+      });
+      const activeBtn = document.getElementById(`type-${newType}`);
+      if (activeBtn) activeBtn.classList.add('active-toggle');
 
-        function changeLanguage(newLang) {
-            currentLang = newLang;
-            document.documentElement.lang = newLang; 
-            showCatalog(currentType, currentLang);
-            updateTitles(currentType, newLang);
-        }
+      // Activer les boutons de Langue
+      document.getElementById('lang-fr').classList.remove('active-toggle');
+      document.getElementById('lang-en').classList.remove('active-toggle');
+      document.getElementById(`lang-${newLang}`).classList.add('active-toggle');
+    }
 
-        function showCatalog(newType, newLang = currentLang) {
-            currentType = newType;
-            currentLang = newLang;
+    function updateTitles(type, lang) {
+      const titles = {
+        mercure: { fr: 'Catalogue Mercure', en: 'Mercury Catalog' },
+        analyse: { fr: 'Catalogue Analyse', en: 'Analysis Catalog' },
+        suivi:   { fr: 'Suivi de formation', en: 'Training Tracking' }
+      };
 
-            updateTitles(newType, newLang);
+      const mainTitles = {
+        fr: 'Expertise Technique et Analytique',
+        en: 'Technical and Analytical Expertise'
+      };
 
-            const allCatalogs = document.querySelectorAll('#all-catalogs > div');
-            allCatalogs.forEach(catalog => {
-                const catalogId = catalog.id;
-                const element = document.getElementById(catalogId);
-                
-                if (catalogId === `catalog-${newType}-${newLang}`) {
-                    // Utiliser le type de display approprié pour les grilles ou la mise en page 'suivi'
-                    element.style.display = 'grid';
-                } else {
-                    element.style.display = 'none';
-                }
-            });
+      const descriptions = {
+        fr: "Bienvenue dans le catalogue d'expertise technique et analytique JAX. Découvrez nos parcours de formation Mercure pour la gestion des données, nos modules d'analyse avancée et notre outil exclusif de suivi de la progression individuelle des agents.",
+        en: "Welcome to the JAX technical and analytical expertise catalog. Discover our Mercury training paths for data management, our advanced analysis modules, and our exclusive tool for tracking individual agent progression."
+      };
 
-            // Activer les boutons de Type de Catalogue
-            ['type-mercure','type-analyse','type-suivi'].forEach(id => {
-                const el = document.getElementById(id);
-                if (el) el.classList.remove('active-toggle');
-            });
-            const activeBtn = document.getElementById(`type-${newType}`);
-            if (activeBtn) activeBtn.classList.add('active-toggle');
+      const modalCtaTexts = {
+        fr: 'Accéder à la formation »',
+        en: 'Go to Training »'
+      };
 
-            // Activer les boutons de Langue
-            document.getElementById('lang-fr').classList.remove('active-toggle');
-            document.getElementById('lang-en').classList.remove('active-toggle');
-            document.getElementById(`lang-${newLang}`).classList.add('active-toggle');
-        }
+      const titleEl = document.getElementById('catalogTitle');
+      const mainEl  = document.getElementById('mainTitle');
+      const pageEl  = document.getElementById('pageTitle');
+      const descEl  = document.getElementById('appDescriptionText');
+      const ctaEl   = document.getElementById('modalCtaLink');
 
-        function updateTitles(type, lang) {
-            const titles = {
-                'mercure': { 'fr': 'Catalogue Mercure', 'en': 'Mercury Catalog' },
-                'analyse': { 'fr': 'Catalogue Analyse', 'en': 'Analysis Catalog' },
-                'suivi': { 'fr': 'Suivi de formation', 'en': 'Training Tracking' }
-            };
+      if (titleEl) titleEl.innerText = titles[type][lang];
+      if (mainEl)  mainEl.innerText  = mainTitles[lang];
+      if (pageEl)  pageEl.innerText  = mainTitles[lang];
+      if (descEl)  descEl.innerText  = descriptions[lang];
+      if (ctaEl)   ctaEl.innerText   = modalCtaTexts[lang];
+    }
 
-            const mainTitles = {
-                'fr': 'Expertise Technique et Analytique',
-                'en': 'Technical and Analytical Expertise'
-            }
-            
-            const descriptions = {
-                'fr': "Bienvenue dans le catalogue d'expertise technique et analytique JAX. Découvrez nos parcours de formation Mercure pour la gestion des données, nos modules d'analyse avancée et notre outil exclusif de suivi de la progression individuelle des agents.",
-                'en': "Welcome to the JAX technical and analytical expertise catalog. Discover our Mercury training paths for data management, our advanced analysis modules, and our exclusive tool for tracking individual agent progression."
-            }
-
-            const modalCtaTexts = {
-                'fr': 'Accéder à la formation »',
-                'en': 'Go to Training »'
-            }
-
-            document.getElementById('catalogTitle').innerText = titles[type][lang];
-            document.getElementById('mainTitle').innerText = mainTitles[lang];
-            document.getElementById('pageTitle').innerText = mainTitles[lang];
-            document.getElementById('appDescriptionText').innerText = descriptions[lang];
-            document.getElementById('modalCtaLink').innerText = modalCtaTexts[lang];
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('bioModal');
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-<div class="modal" id="bioJaxModal">
-<div class="modal-content">
-<span class="close-button" onclick="document.getElementById('bioModal').style.display='none'">×</span>
-<h2>Jérôme Andrieux - Enquêteur et Analyste Criminel</h2>
-<p>Le <strong>Brigadier-Chef Jérôme Andrieux</strong> exerce depuis 1998 au sein de la Police Nationale française en tant qu'<strong>enquêteur judiciaire et analyste criminel</strong>. Grâce à ses affectations successives il est resté au cœur des enquêtes judiciaires, traitant directement d'affaires d'ampleur de délinquance et de criminalité organisée, il a pu bâtir et consolider une expertise rare.</p>
-<h3>Parcours Professionnel</h3>
-<ul>
-<li><strong>Septembre 2025 :</strong> DIPJ 13 Brigade Criminelle de Marseille</li>
-<li><strong>Septembre 2024 :</strong> DZSI Marseille</li>
-<li><strong>Juin à septembre 2024 :</strong> DRPJ PARIS - Brigade Criminelle de Paris - Enquêteur</li>
-<li><strong>2023-2024 :</strong> Mise en disponibilité – consultant technique auprès de la Société Sunéris</li>
-<li><strong>2019-2023 :</strong> Détachement au MEAE – expert technique international Niamey Niger</li>
-<li><strong>2015-2019 :</strong> DRPJ PARIS - Brigade Criminelle de Paris - Procédurier à la Section antiterroriste</li>
-<li><strong>2006-2015 :</strong> Direction de la sécurité publique de l'agglomération parisienne – Sûreté départementale de PARIS</li>
-<li><strong>2002-2006 :</strong> Service d'accueil, de recherche et d'investigation judiciaire du commissariat de Police du 4ème arrondissement</li>
-<li><strong>1999-2002 :</strong> Commissariat central du XIème arrondissement de Paris - Police secours</li>
-<li><strong>1999 :</strong> Direction de l'ordre Public et de la circulation - Compagnie de sécurisation</li>
-<li><strong>1998 :</strong> École Nationale de Police de Fos sur Mer - Élève gardien de la Paix</li>
-</ul>
-<h3>Compétences</h3>
-<ul>
-<li><strong>Analyste criminel opérationnel :</strong> Planifier et orienter l'analyse du renseignement ; Définir les méthodes et les outils de traitement de l'information. Étudier, traiter, sélectionner, hiérarchiser les informations et les données extraites à partir de sources ouvertes ; Produire des hypothèses et des prévisions, des perspectives et des recommandations</li>
-<li><strong>Enquêteur judiciaire de sécurité intérieure (officier de police judiciaire) :</strong> Identifier les infractions pénales, définir la stratégie et diriger l'enquête. Organiser, encadrer et mener les opérations de l'enquête (interpellations, filatures et surveillances, conduite des auditions des victimes, des témoins, des suspects). Rédiger procès-verbaux et rapport de synthèse de l'enquête</li>
-<li><strong>Formation et transmission de techniques de travail</strong></li>
-<li><strong>Officier traitant ROHUM judiciaire</strong></li>
-<li><strong>Expert technique en investigations numériques (analyses téléphoniques et forensiques), maîtrise des outils et logiciels d'investigation</strong></li>
-<li><strong>Conseiller technique pour l'élaboration de cahiers des charges des nouveaux outils hardwares :</strong> Recherches juridiques concernant les outils développés et à développer et leur portée. Adaptation aux spécificités locales de ces outils (sociologiques et juridiques)</li>
-</ul>
-<h3>Formations et Certifications</h3>
-<ul>
-<li><strong>2023 :</strong> Licence professionnelle Analyste criminel opérationnel Sécurité Défense Renseignement</li>
-<li><strong>2022 :</strong> Enquêteur judiciaire de sécurité intérieure</li>
-<li><strong>2004 :</strong> Officier de police judiciaire</li>
-<li><strong>1998 :</strong> Baccalauréat professionnel métiers de la sécurité option police</li>
-<li><strong>1992-1994 :</strong> Niveau DEUG Langue - Université de Clermont Ferrand</li>
-<li><strong>1991-1992 :</strong> Lycée baccalauréat général</li>
-</ul>
-<h3>Distinctions</h3>
-<ul>
-<li><strong>2022 :</strong> Ordre National du Mérite (chevalier)</li>
-<li><strong>2017 :</strong> Médaille de la sécurité intérieure (échelon argent)</li>
-<li><strong>2018 :</strong> Médaille d'honneur de la police nationale (échelon argent)</li>
-</ul>
-<h3>Langues</h3>
-<p>Anglais B1, Espagnol B1</p>
-<h3>Autres éléments pertinents</h3>
-<h3>Coordonnées</h3>
-<p>Email : jeromandrieux@gmail.com<br/>Téléphone : +33 6 03 56 39 24</p>
-</div>
-</div><script>
+    // Fermer la modale au clic hors contenu
     window.addEventListener('click', function(event) {
-        const modal = document.getElementById('bioJaxModal');
-        if (modal && event.target === modal) { modal.style.display = 'none'; }
+      const bio = document.getElementById('bioModal');
+      if (bio && event.target === bio) bio.style.display = 'none';
+
+      const bioJax = document.getElementById('bioJaxModal');
+      if (bioJax && event.target === bioJax) bioJax.style.display = 'none';
     });
-    </script></body>
+  </script>
+</body>
 </html>
