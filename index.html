@@ -835,13 +835,10 @@ function closeJaxModal() {
 }
     // Fermer la modale au clic hors contenu
     window.addEventListener('click', function(event) {
-      const bio = document.getElementById('bioModal');
-      if (bio && event.target === bio) bio.style.display = 'none';
-
-      const bioJax = document.getElementById('bioJaxModal');
-      if (bioJax && event.target === bioJax) bioJax.style.display = 'none';
-      
-    });
+  const bioJax = document.getElementById('bioJaxModal');
+  if (bioJax && event.target === bioJax) bioJax.style.display = 'none';
+});
+    
   </script>
 </body>
 </html>
