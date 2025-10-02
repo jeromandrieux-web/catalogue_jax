@@ -173,6 +173,34 @@
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+    /* --- Styles modale --- */
+.modal {
+  display: none;              /* cachée par défaut */
+  position: fixed;
+  z-index: 1000;              /* au-dessus du contenu */
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;             /* scroll si contenu long */
+  background-color: rgba(0,0,0,0.6); /* fond semi-transparent */
+}
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;           /* centré */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  position: relative;
+}
+.close-button {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close-button:hover { color: #000; }
+    
 
     /* RESPONSIVE DESIGN pour Mobile */
     @media (max-width: 768px) {
@@ -203,8 +231,8 @@
           <button id="lang-fr" onclick="changeLanguage('fr')">FR</button>
           <button id="lang-en" onclick="changeLanguage('en')">EN</button>
         </div>
-        <button onclick="document.getElementById('bioJaxModal').style.display='block'" style="margin-left:15px;background:var(--secondary);color:var(--dark);border:none;border-radius:6px;padding:8px 12px;font-weight:700;cursor:pointer;">
-          À propos de Jérôme Andrieux
+        <button type="button" onclick="openJaxModal()" style="margin-left:15px;background:var(--secondary);color:var(--dark);border:none;border-radius:6px;padding:8px 12px;font-weight:700;cursor:pointer;">
+         À propos de Jérôme Andrieux
         </button>
       </div>
     </div>
@@ -665,27 +693,12 @@
   </div>
   <!-- /.catalogs-section -->
 
-  <!-- MODALE GÉNÉRIQUE -->
-  <div class="modal" id="bioModal" style="display:none;">
-    <div class="modal-content">
-      <span class="close-button" onclick="closeBioModal()">×</span>
-      <h2 id="modalTitle" style="color: var(--primary);"></h2>
-      <p id="modalText"></p>
-      <hr style="margin: 20px 0;"/>
-      <p style="text-align: right; font-weight: bold;">
-        <a id="modalCtaLink" href="URL_GENERALE_INSCRIPTION" style="color: var(--secondary);" target="_blank" rel="noopener">Accéder à la formation »</a>
-      </p>
-    </div>
-  </div>
-
   <!-- MODALE BIO JAX -->
-  <div class="modal" id="bioJaxModal" style="display:none;">
-    <div class="modal-content">
-      <!-- CORRECTION: fermer la BONNE modale -->
-      <span class="close-button" onclick="document.getElementById('bioJaxModal').style.display='none'">×</span>
-      <h2>Jérôme Andrieux - Enquêteur et Analyste Criminel</h2>
-      <p>Le <strong>Brigadier-Chef Jérôme Andrieux</strong> exerce depuis 1998 au sein de la Police Nationale française en tant qu'<strong>enquêteur judiciaire et analyste criminel</strong>. Grâce à ses affectations successives il est resté au cœur des enquêtes judiciaires, traitant directement d'affaires d'ampleur de délinquance et de criminalité organisée, il a pu bâtir et consolider une expertise rare.</p>
-
+ <div class="modal" id="bioJaxModal">
+  <div class="modal-content">
+    <span class="close-button" onclick="closeJaxModal()">×</span>
+    <h2>Jérôme Andrieux - Enquêteur et Analyste Criminel</h2>
+    <p>Le <strong>Brigadier-Chef Jérôme Andrieux</strong> exerce depuis 1998 au sein de la Police Nationale française en tant qu'<strong>enquêteur judiciaire et analyste criminel</strong>...</p>
       <h3>Parcours Professionnel</h3>
       <ul>
         <li><strong>Septembre 2025 :</strong> DIPJ 13 Brigade Criminelle de Marseille</li>
@@ -739,18 +752,7 @@
   <script>
     let currentLang = 'fr';
     let currentType = 'mercure';
-
-    function openBioModal(title, text, link = 'URL_GENERALE_INSCRIPTION') {
-      document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalText').innerText = text;
-      document.getElementById('modalCtaLink').href = link;
-      document.getElementById('bioModal').style.display = 'block';
-    }
-
-    function closeBioModal() {
-      document.getElementById('bioModal').style.display = 'none';
-    }
-
+  
     function changeLanguage(newLang) {
       currentLang = newLang;
       document.documentElement.lang = newLang;
@@ -816,15 +818,21 @@
       const mainEl  = document.getElementById('mainTitle');
       const pageEl  = document.getElementById('pageTitle');
       const descEl  = document.getElementById('appDescriptionText');
-      const ctaEl   = document.getElementById('modalCtaLink');
-
+     
       if (titleEl) titleEl.innerText = titles[type][lang];
       if (mainEl)  mainEl.innerText  = mainTitles[lang];
       if (pageEl)  pageEl.innerText  = mainTitles[lang];
       if (descEl)  descEl.innerText  = descriptions[lang];
-      if (ctaEl)   ctaEl.innerText   = modalCtaTexts[lang];
+    
     }
-
+     function openJaxModal() {
+  const m = document.getElementById('bioJaxModal');
+  if (m) m.style.display = 'block';
+}
+function closeJaxModal() {
+  const m = document.getElementById('bioJaxModal');
+  if (m) m.style.display = 'none';
+}
     // Fermer la modale au clic hors contenu
     window.addEventListener('click', function(event) {
       const bio = document.getElementById('bioModal');
@@ -832,6 +840,7 @@
 
       const bioJax = document.getElementById('bioJaxModal');
       if (bioJax && event.target === bioJax) bioJax.style.display = 'none';
+      
     });
   </script>
 </body>
